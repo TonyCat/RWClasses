@@ -6,10 +6,12 @@ import android.util.Log
 import android.widget.SeekBar
 import androidx.appcompat.app.AlertDialog
 import gov.ny.its.bulleye.databinding.ActivityMainBinding
+import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
 
     private var sliderValue = 0
+    private var targetValue = Random.nextInt(1,100)
 
     private lateinit var binding: ActivityMainBinding
 
@@ -18,6 +20,8 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+
+        binding.targetTextView.text = targetValue.toString()
 
        binding.btnHitMe.setOnClickListener {
            Log.i("Button Click Event", "You clicked the hit me button")
