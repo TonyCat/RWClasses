@@ -7,7 +7,7 @@
     <string name="btnHitMe_text">Hit Me!</string>
 
     <string name="result_dialog_title">Hello There!</string>
-    <string name="result_dialog_message">This is my first popup</string>
+    <string name="result_dialog_message">The slider\'s value is %1$d</string>
     <string name="result_dialog_button_text">Awesome!</string>
 
 </resources>
