@@ -48,8 +48,19 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun pointsForCurrentRound(): Int {
-        return 999
+
+        var maxScore = 100
+        var differance: Int = if (sliderValue > targetValue){
+            sliderValue - targetValue
+        }else if (sliderValue < targetValue){
+            targetValue - sliderValue
+        }else{
+            0
+        }
+        return maxScore - differance
     }
+
+
 
     private fun showResults() {
         val dialogTitle = getString(R.string.result_dialog_title)
