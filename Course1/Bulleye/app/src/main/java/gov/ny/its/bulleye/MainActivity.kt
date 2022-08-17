@@ -11,7 +11,7 @@ import kotlin.random.Random
 class MainActivity : AppCompatActivity() {
 
     private var sliderValue = 0
-    private var targetValue = Random.nextInt(1,100)
+    private var targetValue = Random.nextInt(1, 100)
 
     private lateinit var binding: ActivityMainBinding
 
@@ -23,16 +23,16 @@ class MainActivity : AppCompatActivity() {
 
         binding.targetTextView.text = targetValue.toString()
 
-       binding.btnHitMe.setOnClickListener {
-           Log.i("Button Click Event", "You clicked the hit me button")
-      showResults()
-       }
+        binding.btnHitMe.setOnClickListener {
+            Log.i("Button Click Event", "You clicked the hit me button")
+            showResults()
+        }
 
 
 
         binding.seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-               sliderValue = progress
+                sliderValue = progress
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar?) {
@@ -46,15 +46,21 @@ class MainActivity : AppCompatActivity() {
         })
 
     }
-    private fun showResults(){
+
+    private fun pointsForCurrentRound(): Int {
+        return 999
+    }
+
+    private fun showResults() {
         val dialogTitle = getString(R.string.result_dialog_title)
-        val dialogMessage = getString(R.string.result_dialog_message, sliderValue)
+        val dialogMessage =
+            getString(R.string.result_dialog_message, sliderValue, pointsForCurrentRound())
         //val dialogMessage = "The slider's value is $sliderValue"
         val builder = AlertDialog.Builder(this)
 
         builder.setTitle(dialogTitle)
         builder.setMessage(dialogMessage)
-        builder.setPositiveButton(R.string.btnHitMe_text) {dialog, _ ->
+        builder.setPositiveButton(R.string.btnHitMe_text) { dialog, _ ->
             dialog.dismiss()
         }
         builder.create().show()
