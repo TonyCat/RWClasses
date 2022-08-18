@@ -33,8 +33,13 @@
 
     <SeekBar
         android:id="@+id/seekBar"
+        android:thumb="@drawable/nub"
+        android:progressDrawable="@drawable/seekbar_progress"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:splitTrack="false"
+        android:paddingStart="40dp"
+        android:paddingEnd="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/textView4"
         app:layout_constraintStart_toEndOf="@+id/textView3"
@@ -68,14 +73,15 @@
         android:id="@+id/hitMeButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding = "16dp"
-        app:cornerRadius= "12dp"
+        android:padding="16dp"
         android:text="@string/hit_me_button_text"
+        app:cornerRadius="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.499"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/seekBar" />
+        app:layout_constraintTop_toBottomOf="@+id/seekBar"
+        app:layout_constraintVertical_bias="0.0" />
 
     <LinearLayout
         android:id="@+id/scoreGroup"
@@ -130,10 +136,12 @@
             android:text="0" />
     </LinearLayout>
 
-    <Button
+    <ImageButton
         android:id="@+id/infoButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:src ="@drawable/info_24"
+        android:background="@drawable/circular_button"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:text="@string/info"
         app:layout_constraintBottom_toBottomOf="@+id/roundGroup"
         app:layout_constraintEnd_toEndOf="parent"
