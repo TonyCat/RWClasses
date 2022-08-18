@@ -12,6 +12,7 @@ import kotlin.random.Random
 class MainActivity : AppCompatActivity() {
   private var sliderValue = 0
   private var targetValue = Random.nextInt(1, 100)
+  private var totalScore = 0
 
   private lateinit var binding: ActivityMainBinding
 
@@ -26,8 +27,10 @@ class MainActivity : AppCompatActivity() {
     binding.targetTextView.text = targetValue.toString()
 
     binding.hitMeButton.setOnClickListener {
-      Log.i("Button Click Event", "You clicked the Hit Me Button")
+     // Log.i("Button Click Event", "You clicked the Hit Me Button")
       showResult()
+      totalScore += pointsForCurrentRound()
+      binding.gameScoreTextView?.text = totalScore.toString()
     }
 
     binding.seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {

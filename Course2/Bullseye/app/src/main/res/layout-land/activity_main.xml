@@ -111,7 +111,7 @@
         app:layout_constraintTop_toTopOf="@+id/scoreGroup">
 
         <TextView
-            android:id="@+id/gameScoreLabel"
+            android:id="@+id/gameRoundLabel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/current_round_label" />
