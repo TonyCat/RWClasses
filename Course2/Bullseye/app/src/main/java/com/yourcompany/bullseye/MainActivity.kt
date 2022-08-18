@@ -11,7 +11,7 @@ import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
   private var sliderValue = 0
-  private var targetValue = Random.nextInt(1, 100)
+  private var targetValue = newTargetValue()
   private var totalScore = 0
   private var currentRound = 1
 
@@ -26,13 +26,16 @@ class MainActivity : AppCompatActivity() {
     val view = binding.root
     setContentView(view)
 
-    binding.targetTextView.text = targetValue.toString()
-    binding .gameRoundTextView?.text = currentRound.toString()
-    binding.hitMeButton.setOnClickListener {
+    startNewGame()
+        binding.hitMeButton.setOnClickListener {
      // Log.i("Button Click Event", "You clicked the Hit Me Button")
       showResult()
       totalScore += pointsForCurrentRound()
       binding.gameScoreTextView?.text = totalScore.toString()
+    }
+
+    binding.startOverButton?.setOnClickListener{
+      startNewGame()
     }
 
     binding.seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
@@ -50,6 +53,8 @@ class MainActivity : AppCompatActivity() {
 
   private fun differanceAmount() = abs(targetValue - sliderValue)
 
+  private fun newTargetValue() = Random.nextInt(1,100)
+
   private fun pointsForCurrentRound(): Int {
     val maxScore = 100
     val difference =differanceAmount()
@@ -65,6 +70,19 @@ class MainActivity : AppCompatActivity() {
     return maxScore - difference + bonus
   }
 
+  private fun startNewGame(){
+    totalScore = 0
+    currentRound = 1
+    sliderValue = 50
+    targetValue = newTargetValue()
+
+    binding.gameScoreTextView?.text = totalScore.toString()
+    binding.gameRoundTextView?.text = currentRound.toString()
+    binding.targetTextView.text = targetValue.toString()
+    binding.seekBar.progress = sliderValue
+
+  }
+
   private fun showResult() {
     val dialogTitle = alertTitle()
     val dialogMessage =
@@ -77,7 +95,7 @@ class MainActivity : AppCompatActivity() {
     builder.setMessage(dialogMessage)
     builder.setPositiveButton(R.string.result_dialog_button_text) { dialog, _ ->
       dialog.dismiss()
-      targetValue = Random.nextInt(1,100)
+      targetValue = newTargetValue()
       binding.targetTextView.text = targetValue.toString()
 
       currentRound += 1
