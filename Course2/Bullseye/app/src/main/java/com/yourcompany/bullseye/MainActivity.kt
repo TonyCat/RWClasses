@@ -48,14 +48,16 @@ class MainActivity : AppCompatActivity() {
 
   }
 
+  private fun differanceAmount() = abs(targetValue - sliderValue)
+
   private fun pointsForCurrentRound(): Int {
     val maxScore = 100
-    val difference = abs(targetValue -sliderValue)
+    val difference =differanceAmount()
     return maxScore - difference
   }
 
   private fun showResult() {
-    val dialogTitle = getString(R.string.result_dialog_title)
+    val dialogTitle = alertTitle()
     val dialogMessage =
       getString(R.string.result_dialog_message, sliderValue, pointsForCurrentRound())
 //    val dialogMessage = "The slider's value is $sliderValue"
@@ -75,6 +77,29 @@ class MainActivity : AppCompatActivity() {
 
     builder.create().show()
   }
+
+  private fun alertTitle():String{
+    val differance = differanceAmount()
+
+    val title: String = when {
+        differance == 0 -> {
+          getString(R.string.alert_title_1)
+        }
+        differance < 5 -> {
+          getString(R.string.alert_title_2)
+        }
+        differance <= 10 -> {
+          getString(R.string.alert_title_3)
+        }
+        else -> {
+          getString (R.string.alert_title_4)
+        }
+    }
+
+    return title
+
+  }
+
 }
 
 
