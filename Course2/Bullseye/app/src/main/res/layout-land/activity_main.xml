@@ -8,6 +8,7 @@
 
     <TextView
         android:id="@+id/textView"
+        style="@style/instructions_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/instruction_text"
@@ -19,6 +20,7 @@
 
     <TextView
         android:id="@+id/targetTextView"
+        style="@style/big_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -93,6 +95,7 @@
 
         <TextView
             android:id="@+id/gameScoreTextView"
+            style="@style/game_stats_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
@@ -118,6 +121,7 @@
 
         <TextView
             android:id="@+id/gameRoundTextView"
+            style="@style/game_stats_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
