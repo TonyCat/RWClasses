@@ -53,7 +53,16 @@ class MainActivity : AppCompatActivity() {
   private fun pointsForCurrentRound(): Int {
     val maxScore = 100
     val difference =differanceAmount()
-    return maxScore - difference
+
+    var bonus = 0
+    if (difference == 0){
+      bonus = 100
+    }else if (difference == 1){
+      bonus = 50
+    }
+
+
+    return maxScore - difference + bonus
   }
 
   private fun showResult() {
