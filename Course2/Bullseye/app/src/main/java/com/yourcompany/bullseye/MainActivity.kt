@@ -13,6 +13,8 @@ class MainActivity : AppCompatActivity() {
   private var sliderValue = 0
   private var targetValue = Random.nextInt(1, 100)
   private var totalScore = 0
+  private var currentRound = 1
+
 
   private lateinit var binding: ActivityMainBinding
 
@@ -25,7 +27,7 @@ class MainActivity : AppCompatActivity() {
     setContentView(view)
 
     binding.targetTextView.text = targetValue.toString()
-
+    binding .gameRoundTextView?.text = currentRound.toString()
     binding.hitMeButton.setOnClickListener {
      // Log.i("Button Click Event", "You clicked the Hit Me Button")
       showResult()
@@ -64,6 +66,11 @@ class MainActivity : AppCompatActivity() {
     builder.setMessage(dialogMessage)
     builder.setPositiveButton(R.string.result_dialog_button_text) { dialog, _ ->
       dialog.dismiss()
+      targetValue = Random.nextInt(1,100)
+      binding.targetTextView.text = targetValue.toString()
+
+      currentRound += 1
+      binding.gameRoundTextView?.text = currentRound.toString()
     }
 
     builder.create().show()
