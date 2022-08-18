@@ -68,6 +68,8 @@
         android:id="@+id/hitMeButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:padding = "16dp"
+        app:cornerRadius= "12dp"
         android:text="@string/hit_me_button_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -139,11 +141,12 @@
         app:layout_constraintStart_toEndOf="@+id/roundGroup"
         app:layout_constraintTop_toTopOf="@+id/roundGroup" />
 
-    <Button
+    <ImageButton
         android:id="@+id/startOverButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/start_over"
+        android:background = "@drawable/circular_button"
+        android:src="@drawable/refresh_24"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/scoreGroup"
         app:layout_constraintHorizontal_bias="0.5"
