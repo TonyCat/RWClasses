@@ -3,10 +3,10 @@
 
 Repo is created to store projects completed by the Ray Wenderlich Android bootcamp 2022 (raywenderlich.com)
 
-# Week 1
+## Week 1
 
 ## Need to have (for passing grade):
-Project posted to Github
+Project posted to Github 
 Multiple commits show in commit history
 Public URL for repository shared with grader
 All strings in app are localized
