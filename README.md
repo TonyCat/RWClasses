@@ -6,19 +6,19 @@ Repo is created to store projects completed by the Ray Wenderlich Android bootca
 ## Week 1
 
 ## Need to have (for passing grade):
-- Project posted to Github 
-- Multiple commits show in commit history
-- Public URL for repository shared with grader
-- All strings in app are localized
+- [x] Project posted to Github 
+- [x] Multiple commits show in commit history
+- [x] Public URL for repository shared with grader
+- [x] All strings in app are localized
 - All images have android:contentDescription attributes
-- App compiles, builds, and runs, and is error free
-- Uses View Binding (no findViewById() calls!)
-- Project has readme written in Markdown
+- [x] App compiles, builds, and runs, and is error free
+- [x] Uses View Binding (no findViewById() calls!)
+- [x] Project has readme written in Markdown
 
 ## Nice to have (for Above and Beyond):
 - Handle orientation changes
-- App is warning free
+- [x] App is warning free
 - App has custom app icon, splash screen, and theme
-- Every commit has a detailed comment
-- Student has updated their Github profile with profile photo and about section
+- [x] Every commit has a detailed comment
+- [x] Student has updated their Github profile with profile photo and about section
 

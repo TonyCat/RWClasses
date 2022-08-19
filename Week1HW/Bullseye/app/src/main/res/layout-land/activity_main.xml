@@ -11,6 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="-20dp"
+        android:contentDescription="@string/backgroundDescription"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -95,10 +96,11 @@
 
     <ImageButton
         android:id="@+id/startOverButton"
-        android:background="@drawable/circular_button"
-        android:src="@drawable/refresh_24"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:background="@drawable/circular_button"
+        android:contentDescription="@string/start_over"
+        android:src="@drawable/refresh_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/scoreGroup"
         app:layout_constraintHorizontal_bias="0.5"
@@ -107,10 +109,11 @@
 
     <ImageButton
         android:id="@+id/infoButton"
-        android:src="@drawable/info_24"
-        android:background="@drawable/circular_button"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:background="@drawable/circular_button"
+        android:contentDescription="@string/info"
+        android:src="@drawable/info_24"
         app:layout_constraintBottom_toBottomOf="@+id/roundGroup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -140,7 +143,7 @@
             style="@style/game_stats_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="0" />
+            android:text="@string/defaultScore" />
     </LinearLayout>
 
     <LinearLayout
@@ -166,6 +169,6 @@
             style="@style/game_stats_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="0" />
+            android:text="@string/defaultRound" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
