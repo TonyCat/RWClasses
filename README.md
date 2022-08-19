@@ -3,8 +3,9 @@
 
 Repo is created to store projects completed by the Ray Wenderlich Android bootcamp 2022 (raywenderlich.com)
 
-#Week 1
-##Need to have (for passing grade):
+# Week 1
+
+## Need to have (for passing grade):
 Project posted to Github
 Multiple commits show in commit history
 Public URL for repository shared with grader
@@ -14,7 +15,7 @@ App compiles, builds, and runs, and is error free
 Uses View Binding (no findViewById() calls!)
 Project has readme written in Markdown
 
-##Nice to have (for Above and Beyond):
+## Nice to have (for Above and Beyond):
 Handle orientation changes
 App is warning free
 App has custom app icon, splash screen, and theme
