@@ -16,7 +16,7 @@ Repo is created to store projects completed by the Ray Wenderlich Android bootca
 - [x] Project has readme written in Markdown
 
 ## Nice to have (for Above and Beyond):
-- Handle orientation changes
+- [x] Handle orientation changes
 - [x] App is warning free
 - [x] App has custom app icon, splash screen, and theme
 - [x] Every commit has a detailed comment
